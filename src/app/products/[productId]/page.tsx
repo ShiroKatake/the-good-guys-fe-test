@@ -2,6 +2,7 @@ import Link from "next/link";
 import reviewData from "../../../../public/reviews.json";
 import { ReviewModel } from "@/models/cms/Review.types";
 import { Review } from "@/components/Review/Review";
+import { reviewSort } from "@/utils/reviewSort";
 
 // Get product URLs
 export const generateStaticParams = async () => {
@@ -27,7 +28,9 @@ const getProductReviews = (productId: string) => {
     return review.PRODUCT_ID === parseInt(productId);
   });
 
-  return result;
+  const sortedReviews = reviewSort(result);
+
+  return sortedReviews;
 };
 
 export default function Product({ params }: any) {
