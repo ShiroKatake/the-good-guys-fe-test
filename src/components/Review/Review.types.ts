@@ -1,9 +1,5 @@
 // I assume all data is important, but not all are required
 export interface ReviewData {
-  reviewHdrId: number;
-  productId: number;
-  prodNbr: number;
-  reviewId: number;
   reviewType: string;
   orderDate: string;
   submissionDate: string;
@@ -16,14 +12,4 @@ export interface ReviewData {
   responseTitle: string;
   responseText: string;
   customText: string;
-  published: boolean;
-  objectID: string;
-  _highlightResult: {
-    prodNbr: {
-      value: string;
-      matchLevel: string;
-      fullyHighlighted: boolean;
-      matchedWords: string[];
-    };
-  };
 }
