@@ -16,7 +16,7 @@ Then, open [http://localhost:3000](http://localhost:3000) with your browser to s
 
 ## Directories of interests:
 
-- [./src/app/products/[productId]/page.tsx](./src/app/products/[productId]/page.tsx): The back end fetching mock cms data (~90min)
-- [./src/layouts/Products/Product.tsx](./src/layouts/Products/Product.tsx): The front end rendering fetched data (10min)
-- [./src/utils/reviewSort/reviewSort.ts](./src/utils/reviewSort/reviewSort.ts): The sort function (~60min)
+- [./src/app/products/[productId]/page.tsx](./src/app/products/[productId]/page.tsx): Fetching mock cms data (~90min)
+- [./src/layouts/Products/Product.tsx](./src/layouts/Products/Product.tsx): Rendering fetched data (10min)
+- [./src/utils/reviewSort/reviewSort.ts](./src/utils/reviewSort/reviewSort.ts): Sort function (~60min)
 - Unit tests are included for the front end and sort function
