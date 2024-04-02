@@ -1,5 +1,5 @@
 import { Review } from "@/components/Review/Review";
-import reviewData from "../../public/reviews (3).json";
+import reviewData from "../../public/reviews.json";
 import { getStaticPaths } from "next/dist/build/templates/pages";
 
 export default function Home() {
