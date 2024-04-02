@@ -1,8 +1,6 @@
-import Link from "next/link";
+import { Product } from "@/layouts/Products/Product";
 import reviewData from "../../../../public/reviews.json";
 import { ReviewModel } from "@/models/cms/Review.types";
-import { Review } from "@/components/Review/Review";
-import { reviewSort } from "@/utils/reviewSort";
 
 // Get product URLs
 export const generateStaticParams = async () => {
@@ -28,29 +26,11 @@ const getProductReviews = (productId: string) => {
     return review.PRODUCT_ID === parseInt(productId);
   });
 
-  const sortedReviews = reviewSort(result);
-
-  return sortedReviews;
+  return result;
 };
 
-export default function Product({ params }: any) {
+export default function ProductPage({ params }: any) {
   const reviews = getProductReviews(params.productId);
 
-  return (
-    <main>
-      <Link href="/">Back to home</Link>
-      <h1>Product: {params.productId}</h1>
-      {reviews.map((review: any) => {
-        return (
-          <Review
-            key={review.REVIEW_HDR_ID}
-            rating={review.RATING}
-            reviewTitle={review.REVIEW_TITLE}
-            reviewText={review.REVIEW_TEXT}
-            customerName={review.CUSTOMER_NAME}
-          ></Review>
-        );
-      })}
-    </main>
-  );
+  return <Product productId={params.productId} reviews={reviews} />;
 }
