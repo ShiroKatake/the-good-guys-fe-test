@@ -1,11 +1,21 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import { Review } from "@/components/Review/Review";
+import reviewData from "../../public/reviews (3).json";
+import { getStaticPaths } from "next/dist/build/templates/pages";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Review rating={5} reviewTitle={"test"} reviewText={"test"} customerName={"test"}></Review>
+    <main>
+      {reviewData.map((review) => {
+        return (
+          <Review
+            key={review.REVIEW_HDR_ID}
+            rating={review.RATING}
+            reviewTitle={review.REVIEW_TITLE}
+            reviewText={review.REVIEW_TEXT}
+            customerName={review.CUSTOMER_NAME}
+          ></Review>
+        );
+      })}
     </main>
   );
 }
