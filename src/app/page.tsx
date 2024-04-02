@@ -1,21 +1,10 @@
-import { Review } from "@/components/Review/Review";
-import reviewData from "../../public/reviews.json";
-import { getStaticPaths } from "next/dist/build/templates/pages";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main>
-      {reviewData.map((review) => {
-        return (
-          <Review
-            key={review.REVIEW_HDR_ID}
-            rating={review.RATING}
-            reviewTitle={review.REVIEW_TITLE}
-            reviewText={review.REVIEW_TEXT}
-            customerName={review.CUSTOMER_NAME}
-          ></Review>
-        );
-      })}
+      <Link href="/products/18023878">Product 1 reviews</Link>
+      <Link href="/products/29032403">Product 2 reviews</Link>
     </main>
   );
 }
